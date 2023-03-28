@@ -1,4 +1,4 @@
-package com.zhou.kotlin.demo.kotlin.coroutines
+package com.zhou.kotlin.demo.kotlin.coroutines.basic
 
 import kotlinx.coroutines.*
 

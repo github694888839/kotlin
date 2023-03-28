@@ -1,15 +1,14 @@
-package com.zhou.kotlin.demo.kotlin.coroutines
+package com.zhou.kotlin.demo.kotlin.coroutines.basic
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-fun main() = runBlocking {//开启主协程
-    GlobalScope.launch {
-        delay(1000)
+fun main() = runBlocking {
+    launch {//在runBlocking中启动一个新协程
+        delay(2000L)
         println("world")
     }
     println("hello")
-    delay(2000L)//保证主协程存活2秒
 }

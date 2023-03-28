@@ -1,14 +1,15 @@
-package com.zhou.kotlin.demo.kotlin.coroutines
+package com.zhou.kotlin.demo.kotlin.coroutines.basic
 
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-fun main() = runBlocking {
-    launch {//在runBlocking中启动一个新协程
-        delay(2000L)
+suspend fun main() {
+    val job = GlobalScope.launch {//开启一个协程
+        delay(1000L)
         println("world")
     }
     println("hello")
+    job.join()//直到job结束工作
 }
